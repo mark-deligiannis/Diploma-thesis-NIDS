@@ -496,12 +496,6 @@ class GANomaly_variant(ModelBase):
         z1 = self.Ge(x)
         z2 = self.E(self.Gd(z1))
         return (z1 - z2).abs().mean(axis=1)
-        # return torch.norm(z1 - z2, p=1, dim=1)
-
-    # # alternative
-    # def _anomaly_score(self, x):
-    #     x_hat = self.Gd(self.Ge(x))
-    #     return torch.norm(x_hat - x, p=1, dim=1)
 
     def _test_val(self, real_samples):
         with torch.inference_mode():
@@ -698,9 +692,9 @@ class BiWGAN_GP(ModelBase):
             inputs=interpolates,
             grad_outputs=fake,
             create_graph=True,
-            retain_graph=True, # I suspect that this can go
+            retain_graph=True
         )[0]
-        gradients = gradients.view(gradients.size(0), -1) # This can probably also go
+        gradients = gradients.view(gradients.size(0), -1)
         gradient_penalty = ((gradients.norm(2, dim=1) - 1) ** 2).mean()
         return gradient_penalty
 

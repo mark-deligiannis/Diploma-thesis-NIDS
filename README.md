@@ -32,24 +32,24 @@ This is a CLI developed for the easy training and testing of the included models
 
 ### Simple AutoEncoder
 ```bash
-python .\get_model_results.py --dataset CIC-IDS-2018 --n_epochs 20 --theta 0.001 --sample_interval 1000 AE
+python .\main.py --dataset CIC-IDS-2018 --n_epochs 20 --theta 0.001 --sample_interval 1000 AE
 ```
 ### Variational AutoEncoder
 #### Simple
 ```bash
-python .\get_model_results.py --dataset CIC-IDS-2018 --n_epochs 20 --theta 0.001 --sample_interval 1000 VAE --loss_type H --beta 0.5
+python .\main.py --dataset CIC-IDS-2018 --n_epochs 20 --theta 0.001 --sample_interval 1000 VAE --loss_type H --beta 0.5
 ```
 #### Modified
 ```bash
-python .\get_model_results.py --dataset CIC-IDS-2018 --n_epochs 20 --theta 0.001 --sample_interval 1000 VAE --loss_type B --gamma 10 --max_capacity 10 --Capacity_max_iter 1e5
+python .\main.py --dataset CIC-IDS-2018 --n_epochs 20 --theta 0.001 --sample_interval 1000 VAE --loss_type B --gamma 10 --max_capacity 10 --Capacity_max_iter 1e5
 ```
 ### GANomaly_variant
 ```bash
-python .\get_model_results.py --dataset CIC-IDS-2018 --n_epochs 20 --theta 0.001 --sample_interval 1000 GANomaly_variant --w_adv 1 --w_con 50 --w_enc 1
+python .\main.py --dataset CIC-IDS-2018 --n_epochs 20 --theta 0.001 --sample_interval 1000 GANomaly_variant --w_adv 1 --w_con 50 --w_enc 1
 ```
 ### BiWGAN_GP
 ```bash
-python .\get_model_results.py --dataset CIC-IDS-2018 --n_epochs 20 --theta 0.001 --sample_interval 1000 BiWGAN_GP --n_critic 5 --sigma 10
+python .\main.py --dataset CIC-IDS-2018 --n_epochs 20 --theta 0.001 --sample_interval 1000 BiWGAN_GP --n_critic 5 --sigma 10
 ```
 ### Convolutional AutoEncoder
 ```bash
