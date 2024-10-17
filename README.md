@@ -17,7 +17,7 @@ Everything related to the datasets and their preprocessing is contained in this 
 - Performing all of the above for the test set consistently with the training set (normalizer, one-hot column names and dictionary of rare values from the training dataset can be given as input for the test set).
 Currently, the datasets CIC-IDS-2018 and UNSW-NB15 have been tested and are fully supported, but partial support for the NSL-KDD and BoT-IoT datasets is provided in this file only (such options are not included in the `main.py` CLI.).
 
-## `all_models.py`
+## `models.py`
 This is where all the model code is stored. For easy and consistent development of models, `ModelBase` was developed. This is a structured parent method from which models can inherit. This takes the mind of the programmer away from standard, repetitive details (the outer training loop of the program, displaying intermediate results to the terminal, enabling and disabling inference modes, properly sending components to devices, saving and loading parameters, plotting results), and allowing them to focus on the important part of the model design. This paradigm also enforces good practices by ensuring that abstract methods are implemented.
 
 In our code, five models are implemented. The use of counterexamples can be controlled through the weight hyperparameter `theta`:
